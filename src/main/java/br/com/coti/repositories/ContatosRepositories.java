@@ -2,7 +2,6 @@ package br.com.coti.repositories;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.List;
 
 import br.com.coti.entities.Contato;
 import br.com.coti.factories.ConnectionFactory;
@@ -12,7 +11,7 @@ public class ContatosRepositories {
 	public void cadastrarContato(Contato contato) throws Exception {
 
 		var connection = ConnectionFactory.getConnection();
-		var statement = connection.prepareStatement("INSERT INTO CONTATOS(NOME,TELEFONE,EMAIL) VALUES(?,?,?)");
+		var statement = connection.prepareStatement("INSERT INTO CONTATO(NOME,TELEFONE,EMAIL) VALUES(?,?,?)");
 
 		try {
 			statement.setString(1, contato.getNome());
@@ -33,7 +32,7 @@ public class ContatosRepositories {
 		var connection = ConnectionFactory.getConnection();
 		
 		try {
-			var statement = connection.prepareStatement("UPDATE CONTATOS SET NOME = ?, TELEFONE = ?, EMAIL = ? WHERE ID = ?");
+			var statement = connection.prepareStatement("UPDATE CONTATO SET NOME = ?, TELEFONE = ?, EMAIL = ? WHERE ID = ?");
 
 			statement.setString(1, contato.getNome());
 			statement.setString(2, contato.getTelefone());
@@ -55,7 +54,7 @@ public class ContatosRepositories {
 		var connection = ConnectionFactory.getConnection();
 		
 		try {
-			var statement = connection.prepareStatement("DELETE FROM CONTATOS WHERE ID = ?");
+			var statement = connection.prepareStatement("DELETE FROM CONTATO WHERE ID = ?");
 			statement.setInt(1, idContato);
 			statement.executeUpdate();
 			statement.close();

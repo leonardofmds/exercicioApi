@@ -11,8 +11,9 @@ public class ConnectionFactory {
 
 		try {
 
-			connection = DriverManager.getConnection("jdbc:postgres://localhost:5437/agendadb", "admin", "admin");
-
+			connection = DriverManager.getConnection("jdbc:postgresql://localhost:5437/agendadb", "admin", "admin");
+			
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
