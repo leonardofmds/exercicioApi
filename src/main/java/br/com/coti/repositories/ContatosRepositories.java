@@ -72,7 +72,7 @@ public class ContatosRepositories {
 		var contatos = new ArrayList<Contato>();
 		
 		try {
-			var statement = connection.prepareStatement("SELECT * FROM CONTATOS");
+			var statement = connection.prepareStatement("SELECT * FROM CONTATO");
 			var result = statement.executeQuery();
 
 			while (result.next()) {
@@ -102,7 +102,7 @@ public class ContatosRepositories {
 		var contato = new Contato();
 		
 		try {
-			var statement = connection.prepareStatement("SELECT * FROM CONTATOS WHERE ID = ?");
+			var statement = connection.prepareStatement("SELECT * FROM CONTATO WHERE ID = ?");
 			statement.setInt(1, idContato);
 			var result = statement.executeQuery();
 
