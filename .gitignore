@@ -22,3 +22,32 @@
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 replay_pid*
+
+# Ignore arquivos gerados pelo Maven
+/target/
+
+# Ignore configurações do Eclipse
+/.classpath
+/.project
+/.settings/
+
+# Ignore configurações do IntelliJ IDEA
+/.idea/
+*.iml
+*.iws
+
+# Ignore logs e arquivos temporários
+/logs/
+*.log
+/tmp/
+
+# Ignore dependências baixadas pelo Maven
+/.m2/
+
+# Ignore arquivos do sistema operacional
+.DS_Store
+Thumbs.db
+
+# Ignore credenciais e configurações sensíveis
+/application.properties
+/application.yml
