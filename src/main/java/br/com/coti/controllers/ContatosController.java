@@ -20,7 +20,7 @@ import io.swagger.v3.oas.annotations.Operation;
 public class ContatosController {
 
 	@Operation(summary = "Serviço para listar todos os contatos")
-	@GetMapping("/listar")
+	@GetMapping()
 	public List<Contato> listarContatos() {
 		var contatoRepository = new ContatosRepositories();
 
@@ -33,7 +33,7 @@ public class ContatosController {
 	}
 
 	@Operation(summary = "Serviço para consultar um contato pelo ID")
-	@GetMapping("/consultar/{idContato}")
+	@GetMapping("/{idContato}")
 	public Contato consultarContato(@PathVariable int idContato) {
 		var contatoRepository = new ContatosRepositories();
 
@@ -46,7 +46,7 @@ public class ContatosController {
 	}
 
 	@Operation(summary = "Serviço para cadastrar um novo contato")
-	@PostMapping("/cadastrar")
+	@PostMapping()
 	public void cadastrarContato(@RequestBody Contato contato) {
 		var contatoRepository = new ContatosRepositories();
 
@@ -58,7 +58,7 @@ public class ContatosController {
 	}
 
 	@Operation(summary = "Serviço para atualizar um contato")
-	@PutMapping("/atualizar")
+	@PutMapping()
 	public void atualizarContato(@RequestBody Contato contato) {
 		var contatoRepository = new ContatosRepositories();
 
@@ -70,8 +70,8 @@ public class ContatosController {
 	}
 
 	@Operation(summary = "Serviço para excluir um contato")
-	@DeleteMapping("/excluir")
-	public void excluirContato(@RequestBody int idContato) {
+	@DeleteMapping("/{idContato}")
+	public void excluirContato(@PathVariable int idContato) {
 		var contatoRepository = new ContatosRepositories();
 
 		try {
